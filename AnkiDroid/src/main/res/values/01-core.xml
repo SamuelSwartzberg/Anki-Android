@@ -156,4 +156,8 @@
     <!-- Permissions -->
     <string name="read_write_permission_label">Read and write to the AnkiDroid database</string>
     <string name="read_write_permission_description">access existing notes, cards, note types, and decks, as well as create new ones</string>
+
+
+
+    <string name="blank"></string>
 </resources>

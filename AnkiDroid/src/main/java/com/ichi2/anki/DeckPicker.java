@@ -45,6 +45,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
@@ -398,7 +399,6 @@ public class DeckPicker extends NavigationDrawerActivity implements
 
         // Setup the FloatingActionButtons, should work everywhere with min API >= 15
         mActionsMenu = findViewById(R.id.add_content_menu);
-        mActionsMenu.findViewById(R.id.fab_expand_menu_button).setContentDescription(getString(R.string.menu_add));
         configureFloatingActionsMenu();
 
         mReviewSummaryTextView = (TextView) findViewById(R.id.today_stats_text_view);
@@ -447,9 +447,9 @@ public class DeckPicker extends NavigationDrawerActivity implements
     }
 
     private void configureFloatingActionsMenu() {
-        final FloatingActionButton addDeckButton = findViewById(R.id.add_deck_action);
-        final FloatingActionButton addSharedButton = findViewById(R.id.add_shared_action);
-        final FloatingActionButton addNoteButton = findViewById(R.id.add_note_action);
+        final AppCompatImageView addDeckButton = findViewById(R.id.add_deck_action);
+        final AppCompatImageView addSharedButton = findViewById(R.id.add_shared_action);
+        final AppCompatImageView addNoteButton = findViewById(R.id.add_note_action);
         addDeckButton.setOnClickListener(view -> {
             if (mActionsMenu == null) {
                 return;
@@ -722,7 +722,7 @@ public class DeckPicker extends NavigationDrawerActivity implements
         } else if (colIsOpen()) {
             selectNavigationItem(R.id.nav_decks);
             updateDeckList();
-            setTitle(getResources().getString(R.string.app_name));
+            setTitle(getResources().getString(R.string.blank)); // used to show app_name
         }
     }
 
@@ -1951,6 +1951,10 @@ public class DeckPicker extends NavigationDrawerActivity implements
                 List<Sched.DeckDueTreeNode> nodes = (List<Sched.DeckDueTreeNode>) result.getObjArray()[0];
                 mDeckListAdapter.buildDeckList(nodes, getCol());
 
+
+                /* This code has been commented out since the toolbar has been moved to the bottom of the main deckpicker screen.
+                Consider moving this data to a textview outside of the toolbar in the future.
+
                 // Set the "x due in y minutes" subtitle
                 try {
                     int eta = mDeckListAdapter.getEta();
@@ -1968,6 +1972,8 @@ public class DeckPicker extends NavigationDrawerActivity implements
                 } catch (RuntimeException e) {
                     Timber.e(e, "RuntimeException setting time remaining");
                 }
+                */
+
 
                 long current = getCol().getDecks().current().optLong("id");
                 if (mFocusedDeck != current) {
