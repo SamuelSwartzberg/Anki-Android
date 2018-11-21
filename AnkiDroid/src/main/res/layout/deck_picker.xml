@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                                     android:id="@+id/root_layout"
-                                                     android:layout_width="fill_parent"
-                                                     android:layout_height="fill_parent">
+    android:id="@+id/root_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
     <RelativeLayout
         android:id="@+id/deckpicker_view"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical" >
 
-        <include layout="@layout/toolbar" />
+        <include
+            layout="@layout/toolbar_new" />
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/pull_to_sync_wrapper"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_above="@+id/today_stats_text_view"
-            android:layout_below="@+id/toolbar">
+            >
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/files"
@@ -34,10 +35,18 @@
             android:layout_height="wrap_content"
             android:id="@+id/today_stats_text_view"
             android:layout_alignParentBottom="true"
-            android:layout_centerInParent="true"
-            android:layout_marginBottom="4dp"
-            android:gravity="center"/>
+            android:layout_marginBottom="96dp"
+            android:gravity="center"
+            android:textColor="@color/theme_light_secondary_text"
+            />
+        <include layout="@layout/fab_oval_main"
+            android:layout_width="@dimen/fab_width"
+            android:layout_height="@dimen/fab_height"
+            android:layout_margin="@dimen/fab_margin"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            />
     </RelativeLayout>
     <include layout="@layout/anki_progress"/>
-    <include layout="@layout/floating_add_button"/>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

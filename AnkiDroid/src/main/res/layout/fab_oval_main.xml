@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This replaces the old Floating Action Button. -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fab_oval_view"
+    android:layout_width="@dimen/fab_width"
+    android:layout_height="@dimen/fab_height"
+    android:background="@drawable/fab_oval"
+    >
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@id/add_shared_action"
+        android:background="@color/fab_oval_divider_color"
+        />
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/add_shared_action"
+        android:background="@color/fab_oval_divider_color"
+        />
+
+
+    <ImageView
+        android:id="@+id/add_deck_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/add_shared_action"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_centerVertical="true"
+        android:background="?selectableItemBackgroundBorderless"
+        app:srcCompat="@drawable/round_create_new_folder" />
+
+    <ImageView
+        android:id="@+id/add_shared_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:background="?selectableItemBackgroundBorderless"
+        app:srcCompat="@drawable/round_folder_shared" />
+
+    <ImageView
+        android:id="@+id/add_note_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/add_shared_action"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_centerVertical="true"
+        android:background="?selectableItemBackgroundBorderless"
+        app:srcCompat="@drawable/round_note_add" />
+
+</RelativeLayout>

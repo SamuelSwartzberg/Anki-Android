@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Preferences screens -->
+    <!-- This v23 file makes the status bar white with dark icons.
+         No other changes were made.
+         Current problem: if user selects and holds finger on an option,
+         then the background around the text stays white for some reason. -->
+    <style name="LegacyActionBarLight" parent="Theme.AppCompat.Light">
+        <item name="android:background">@color/white</item>
+        <item name="android:statusBarColor">@android:color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>
