@@ -1,56 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/top_bar"
-        android:layout_width="fill_parent"
+    android:id="@+id/top_bar"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="3dp"
+    android:paddingBottom="3dp"
+    android:gravity="center_vertical"
+    android:background="?attr/topBarColor">
+
+    <LinearLayout
+        android:id="@+id/card_counts_layout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="9dp"
-        android:paddingRight="10dp"
-        android:paddingTop="2dp"
-        android:paddingBottom="3dp"
-        android:gravity="center_vertical"
-        android:background="?attr/topBarColor">
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        >
         <TextView
             android:id="@+id/new_number"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
-            android:textColor="?attr/newCountColor"
-            android:textSize="14sp" />
+            android:layout_width="wrap_content"
+            android:layout_toLeftOf="@id/learn_number"
+            android:layout_marginRight="8dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:textSize="14sp"
+            android:textColor="@color/reviewer_text_color"
+            android:background="@drawable/oval_outline"
+            />
         <TextView
             android:id="@+id/learn_number"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/new_number"
+            android:layout_width="wrap_content"
+            android:layout_centerHorizontal="true"
             android:paddingLeft="8dp"
-            android:text=""
-            android:textColor="?attr/learnCountColor"
-            android:textSize="14sp" />
-
+            android:paddingRight="8dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:textSize="14sp"
+            android:textColor="@color/reviewer_text_color"
+            android:background="@drawable/oval_outline"
+            />
         <TextView
             android:id="@+id/review_number"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
             android:layout_toRightOf="@+id/learn_number"
+            android:layout_marginLeft="8dp"
             android:paddingLeft="8dp"
-            android:text=""
-            android:textColor="?attr/reviewCountColor"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/choosen_answer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:gravity="center"
-            android:text=""
-            android:textSize="14sp" />
-
-        <Chronometer
-            android:id="@+id/card_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:gravity="center"
+            android:paddingRight="8dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
             android:textSize="14sp"
-            android:visibility="invisible" />
+            android:textColor="@color/reviewer_text_color"
+            android:background="@drawable/oval_outline"
+            />
+
+    </LinearLayout>
+
+
+    <Chronometer
+        android:id="@+id/card_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:visibility="invisible" />
+
+    <!-- Divider line below the top bar contents.
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/divider"
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/card_counts_layout"
+        />
+        -->
+
 </RelativeLayout>

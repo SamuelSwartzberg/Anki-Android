@@ -159,7 +159,7 @@ public class AnkiFont {
                 String name = new File(path).getName();
                 Resources res = AnkiDroidApp.getAppResources();
                 Toast toast = Toast.makeText(ctx, res.getString(R.string.corrupt_font, name), Toast.LENGTH_LONG);
-                toast.show();
+                // toast.show(); // !!! Turned off toast message for corrupt font. Uncomment to turn it back on.
                 // Don't warn again in this session
                 corruptFonts.add(path);
             }
