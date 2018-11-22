@@ -63,6 +63,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -158,7 +160,7 @@ public class DeckPicker extends NavigationDrawerActivity implements
     private RecyclerView mRecyclerView;
     private LinearLayoutManager mRecyclerViewLayoutManager;
     private DeckAdapter mDeckListAdapter;
-    private FloatingActionsMenu mActionsMenu;
+    private RelativeLayout mActionsMenu;
     private Snackbar.Callback mSnackbarShowHideCallback = new Snackbar.Callback();
 
     private SwipeRefreshLayout mPullToSyncWrapper;
@@ -212,9 +214,6 @@ public class DeckPicker extends NavigationDrawerActivity implements
         public void onClick(View v) {
             long deckId = (long) v.getTag();
             Timber.i("DeckPicker:: Selected deck with id %d", deckId);
-            if (mActionsMenu != null && mActionsMenu.isExpanded()) {
-                mActionsMenu.collapse();
-            }
             handleDeckSelection(deckId, false);
             if (mFragmented || !CompatHelper.isLollipop()) {
                 // Calling notifyDataSetChanged() will update the color of the selected deck.
@@ -229,9 +228,6 @@ public class DeckPicker extends NavigationDrawerActivity implements
         public void onClick(View v) {
             long deckId = (long) v.getTag();
             Timber.i("DeckPicker:: Selected deck with id %d", deckId);
-            if (mActionsMenu != null && mActionsMenu.isExpanded()) {
-                mActionsMenu.collapse();
-            }
             handleDeckSelection(deckId, true);
             if (mFragmented || !CompatHelper.isLollipop()) {
                 // Calling notifyDataSetChanged() will update the color of the selected deck.
@@ -447,14 +443,13 @@ public class DeckPicker extends NavigationDrawerActivity implements
     }
 
     private void configureFloatingActionsMenu() {
-        final AppCompatImageView addDeckButton = findViewById(R.id.add_deck_action);
-        final AppCompatImageView addSharedButton = findViewById(R.id.add_shared_action);
-        final AppCompatImageView addNoteButton = findViewById(R.id.add_note_action);
+        final ImageView addDeckButton = findViewById(R.id.add_deck_action);
+        final ImageView addSharedButton = findViewById(R.id.add_shared_action);
+        final ImageView addNoteButton = findViewById(R.id.add_note_action);
         addDeckButton.setOnClickListener(view -> {
             if (mActionsMenu == null) {
                 return;
             }
-            mActionsMenu.collapse();
             mDialogEditText = new EditText(DeckPicker.this);
             mDialogEditText.setSingleLine(true);
             // mDialogEditText.setFilters(new InputFilter[] { mDeckNameFilter });
@@ -472,11 +467,9 @@ public class DeckPicker extends NavigationDrawerActivity implements
                     .show();
         });
         addSharedButton.setOnClickListener(view -> {
-            mActionsMenu.collapse();
             addSharedDeck();
         });
         addNoteButton.setOnClickListener(view -> {
-            mActionsMenu.collapse();
             addNote();
         });
     }
@@ -791,8 +784,7 @@ public class DeckPicker extends NavigationDrawerActivity implements
             super.onBackPressed();
         } else {
             Timber.i("Back key pressed");
-            if (mActionsMenu != null && mActionsMenu.isExpanded()) {
-                mActionsMenu.collapse();
+            if (mActionsMenu != null) {
             } else {
                 automaticSync();
                 finishWithAnimation();
