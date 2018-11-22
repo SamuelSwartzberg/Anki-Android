@@ -36,7 +36,6 @@
     <!--  Material Design-style persistent footer button -->
     <style name="FooterButtonLayoutBase">
         <item name="android:layout_height">48dp</item>
-        <item name="android:textAllCaps">true</item>
         <item name="android:textSize">14sp</item>
         <item name="android:typeface">sans</item>
         <item name="android:gravity">center</item>
@@ -95,6 +94,7 @@
 
     <!-- Action bar. Text color changes to either black or white depending on theme. -->
     <style name="ActionBarStyle" parent="Base.ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:fontFamily">@font/product_sans_regular</item>
         <!-- Colors: hamburger, title text, overflow icon -->
         <item name="android:textColorPrimary">?attr/actionBarTextColor</item>
         <!-- Colors: subtitle text -->
