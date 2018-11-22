@@ -71,6 +71,7 @@ import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.afollestad.materialdialogs.util.TypefaceHelper;
+import com.google.android.material.button.MaterialButton;
 import com.ichi2.anim.ActivityTransitionAnimation;
 import com.ichi2.anim.ViewAnimation;
 import com.ichi2.anki.receiver.SdCardReceiver;
@@ -1317,7 +1318,7 @@ public abstract class AbstractFlashcardViewer extends NavigationDrawerActivity {
             mNext4.setVisibility(View.GONE);
         }
 
-        Button mFlipCard = (Button) findViewById(R.id.flip_card);
+        Button mFlipCard = (MaterialButton) findViewById(R.id.flip_card);
         mFlipCard.setTypeface(TypefaceHelper.get(this, "Roboto-Medium"));
         mFlipCardLayout = (LinearLayout) findViewById(R.id.flashcard_layout_flip);
         mFlipCardLayout.setOnClickListener(mFlipCardListener);
@@ -1348,7 +1349,7 @@ public abstract class AbstractFlashcardViewer extends NavigationDrawerActivity {
 
         mCardTimer = (Chronometer) findViewById(R.id.card_time);
 
-        mChosenAnswer = (TextView) findViewById(R.id.choosen_answer);
+        mChosenAnswer = (TextView) findViewById(R.id.chosen_answer);
 
         mAnswerField = (EditText) findViewById(R.id.answer_field);
 
@@ -1542,24 +1543,16 @@ public abstract class AbstractFlashcardViewer extends NavigationDrawerActivity {
         // Set correct label and background resource for each button
         // Note that it's necessary to set the resource dynamically as the ease2 / ease3 buttons
         // (which libanki expects ease to be 2 and 3) can either be hard, good, or easy - depending on num buttons shown
-        final int[] background = Themes.getResFromAttr(this, new int [] {
-                R.attr.againButtonRef,
-                R.attr.hardButtonRef,
-                R.attr.goodButtonRef,
-                R.attr.easyButtonRef});
         final int[] textColor = Themes.getColorFromAttr(this, new int [] {
                 R.attr.againButtonTextColor,
                 R.attr.hardButtonTextColor,
                 R.attr.goodButtonTextColor,
                 R.attr.easyButtonTextColor});
         mEase1Layout.setVisibility(View.VISIBLE);
-        mEase1Layout.setBackgroundResource(background[0]);
-        mEase4Layout.setBackgroundResource(background[3]);
         switch (buttonCount) {
             case 2:
                 // Ease 2 is "good"
                 mEase2Layout.setVisibility(View.VISIBLE);
-                mEase2Layout.setBackgroundResource(background[2]);
                 mEase2.setText(R.string.ease_button_good);
                 mEase2.setTextColor(textColor[2]);
                 mNext2.setTextColor(textColor[2]);
@@ -1568,13 +1561,11 @@ public abstract class AbstractFlashcardViewer extends NavigationDrawerActivity {
             case 3:
                 // Ease 2 is good
                 mEase2Layout.setVisibility(View.VISIBLE);
-                mEase2Layout.setBackgroundResource(background[2]);
                 mEase2.setText(R.string.ease_button_good);
                 mEase2.setTextColor(textColor[2]);
                 mNext2.setTextColor(textColor[2]);
                 // Ease 3 is easy
                 mEase3Layout.setVisibility(View.VISIBLE);
-                mEase3Layout.setBackgroundResource(background[3]);
                 mEase3.setText(R.string.ease_button_easy);
                 mEase3.setTextColor(textColor[3]);
                 mNext3.setTextColor(textColor[3]);
@@ -1584,14 +1575,12 @@ public abstract class AbstractFlashcardViewer extends NavigationDrawerActivity {
                 mEase2Layout.setVisibility(View.VISIBLE);
                 // Ease 2 is "hard"
                 mEase2Layout.setVisibility(View.VISIBLE);
-                mEase2Layout.setBackgroundResource(background[1]);
                 mEase2.setText(R.string.ease_button_hard);
                 mEase2.setTextColor(textColor[1]);
                 mNext2.setTextColor(textColor[1]);
                 mEase2Layout.requestFocus();
                 // Ease 3 is good
                 mEase3Layout.setVisibility(View.VISIBLE);
-                mEase3Layout.setBackgroundResource(background[2]);
                 mEase3.setText(R.string.ease_button_good);
                 mEase3.setTextColor(textColor[2]);
                 mNext3.setTextColor(textColor[2]);
@@ -1785,6 +1774,10 @@ public abstract class AbstractFlashcardViewer extends NavigationDrawerActivity {
 
 
     protected void updateScreenCounts() {
+        TextView tvTitle = findViewById(R.id.textviewTitle);
+        TextView tvSubtitle = findViewById(R.id.textviewSubtitle);
+
+
         ActionBar actionBar = getSupportActionBar();
         if (mCurrentCard == null) return;
         int[] counts = mSched.counts(mCurrentCard);
@@ -1792,13 +1785,13 @@ public abstract class AbstractFlashcardViewer extends NavigationDrawerActivity {
         if (actionBar != null) {
             try {
                 String[] title = getCol().getDecks().get(mCurrentCard.getDid()).getString("name").split("::");
-                actionBar.setTitle(title[title.length - 1]);
+                tvTitle.setText(title[title.length - 1]);
             } catch (JSONException e) {
                 throw new RuntimeException(e);
             }
             if (mPrefShowETA) {
                 int eta = mSched.eta(counts, false);
-                actionBar.setSubtitle(getResources().getQuantityString(R.plurals.reviewer_window_title, eta, eta));
+                tvSubtitle.setText(getResources().getQuantityString(R.plurals.reviewer_window_title, eta, eta));
             }
         }
 
@@ -1824,9 +1817,9 @@ public abstract class AbstractFlashcardViewer extends NavigationDrawerActivity {
                 break;
         }
 
-        mTextBarNew.setText(newCount);
-        mTextBarLearn.setText(lrnCount);
-        mTextBarReview.setText(revCount);
+        mTextBarNew.setText(newCount + " New");
+        mTextBarLearn.setText(lrnCount + " Learned");
+        mTextBarReview.setText(revCount + " Reviewable");
     }
 
     /*

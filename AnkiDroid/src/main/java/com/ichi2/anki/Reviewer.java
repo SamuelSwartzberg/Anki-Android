@@ -142,12 +142,12 @@ public class Reviewer extends AbstractFlashcardViewer {
             } else {
                 Timber.e("Could not set title in reviewer because collection closed");
             }
-            getSupportActionBar().setTitle(title[title.length - 1]);
-            super.setTitle(title[title.length - 1]);
+            getSupportActionBar().setTitle(R.string.blank);
+            super.setTitle(R.string.blank);
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
-        getSupportActionBar().setSubtitle("");
+        getSupportActionBar().setSubtitle(R.string.blank);
     }
 
     @Override
@@ -378,9 +378,9 @@ public class Reviewer extends AbstractFlashcardViewer {
         getMenuInflater().inflate(R.menu.reviewer, menu);
         setCustomButtons(menu);
         if (mCurrentCard != null && mCurrentCard.note().hasTag("marked")) {
-            menu.findItem(R.id.action_mark_card).setTitle(R.string.menu_unmark_note).setIcon(R.drawable.ic_star_white_24dp);
+            menu.findItem(R.id.action_mark_card).setTitle(R.string.menu_unmark_note).setIcon(R.drawable.round_bookmark);
         } else {
-            menu.findItem(R.id.action_mark_card).setTitle(R.string.menu_mark_note).setIcon(R.drawable.ic_star_outline_white_24dp);
+            menu.findItem(R.id.action_mark_card).setTitle(R.string.menu_mark_note).setIcon(R.drawable.round_bookmark_border);
         }
 
         if (mShowWhiteboard && mWhiteboard != null && mWhiteboard.undoSize() > 0) {
@@ -392,10 +392,10 @@ public class Reviewer extends AbstractFlashcardViewer {
             menu.findItem(R.id.action_undo).setIcon(R.drawable.ic_eraser_variant_white_24dp);
             menu.findItem(R.id.action_undo).setEnabled(false).getIcon().setAlpha(Themes.ALPHA_ICON_DISABLED_LIGHT);
         } else if (colIsOpen() && getCol().undoAvailable()) {
-            menu.findItem(R.id.action_undo).setIcon(R.drawable.ic_undo_white_24dp);
+            menu.findItem(R.id.action_undo).setIcon(R.drawable.round_undo);
             menu.findItem(R.id.action_undo).setEnabled(true).getIcon().setAlpha(Themes.ALPHA_ICON_ENABLED_LIGHT);
         } else {
-            menu.findItem(R.id.action_undo).setIcon(R.drawable.ic_undo_white_24dp);
+            menu.findItem(R.id.action_undo).setIcon(R.drawable.round_undo);
             menu.findItem(R.id.action_undo).setEnabled(false).getIcon().setAlpha(Themes.ALPHA_ICON_DISABLED_LIGHT);
         }
         if (mPrefWhiteboard) {

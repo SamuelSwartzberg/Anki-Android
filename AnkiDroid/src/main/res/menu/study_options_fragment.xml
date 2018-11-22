@@ -3,7 +3,7 @@
     <item
         android:id="@+id/action_undo"
         android:enabled="true"
-        android:icon="@drawable/ic_undo_white_24dp"
+        android:icon="@drawable/round_undo"
         android:title="@string/undo"
         ankidroid:showAsAction="always"/>
     <item

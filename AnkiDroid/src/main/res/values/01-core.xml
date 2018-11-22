@@ -42,8 +42,8 @@
         <item quantity="other">%1$d cards due (%2$s)</item>
     </plurals>
     <plurals name="reviewer_window_title">
-        <item quantity="one">%d minute left</item>
-        <item quantity="other">%d minutes left</item>
+        <item quantity="one">%d min.</item>
+        <item quantity="other">%d mins.</item>
     </plurals>
 
     <!-- The deck picker via AnkiStatsTaskHandler.java -->
