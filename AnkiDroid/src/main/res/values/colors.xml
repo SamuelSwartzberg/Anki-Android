@@ -97,9 +97,8 @@
     <color name="material_theme_grey">#303030</color>
 
 
-
-
-    <!-- FAB oval -->
-    <color name="fab_oval_divider_color">#0D000000</color>
-
+    <!-- Material Design 2018 Update-->
+    <color name="fab_divider_color">#0D000000</color>
+    <color name="outline_color">#e1e1e1</color>
+    <color name="reviewer_text_color">@color/material_grey_700</color>
 </resources>

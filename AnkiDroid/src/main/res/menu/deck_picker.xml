@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/action_sync"
-        android:icon="@drawable/ic_sync"
+        android:icon="@drawable/round_sync"
         android:title="@string/sync_title"
         ankidroid:showAsAction="always"/>
     <item

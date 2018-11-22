@@ -31,4 +31,9 @@
     <dimen name="fab_width">180dp</dimen>
     <dimen name="fab_margin">32dp</dimen>
 
+    <!-- Reviewer -->
+    <dimen name="toolbar_title_margin">18dp</dimen>
+    <dimen name="reviewer_touch_target">64dp</dimen>
+
+
 </resources>

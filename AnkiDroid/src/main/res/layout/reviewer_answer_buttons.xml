@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:id="@+id/bottom_area_layout"
-    android:layout_width="fill_parent"
+<LinearLayout android:id="@+id/bottom_area_layout"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!-- "Type in the answer" bar -->
     <EditText
         android:id="@+id/answer_field"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/type_answer_hint"
         android:imeOptions="actionDone"
@@ -21,33 +21,45 @@
 
     <LinearLayout
         android:id="@+id/answer_options_layout"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="72dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        >
 
         <LinearLayout
             android:id="@+id/flashcard_layout_flip"
-            android:layout_width="fill_parent"
-            android:layout_height="@dimen/touch_target"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            >
 
-            <Button
-                style="@style/FooterButtonLayout"
-                android:background="?attr/hardButtonRef"
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/flip_card"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/reviewer_touch_target"
+                android:gravity="center"
                 android:clickable="false"
                 android:text="@string/show_answer"
-                android:textColor="?attr/answerButtonTextColor"/>
+                android:textSize="14sp"
+                android:textAllCaps="true"
+                android:textAppearance="@color/white"
+                app:cornerRadius="8dp"
+                />
         </LinearLayout>
+
+
+
 
         <LinearLayout
             style="@style/FooterButtonLayout"
-            android:background="?attr/againButtonRef"
+            android:background="@drawable/card_outline"
             android:id="@+id/flashcard_layout_ease1"
             android:layout_width="0dip"
-            android:layout_height="@dimen/touch_target"
+            android:layout_height="@dimen/reviewer_touch_target"
             android:layout_weight="1"
             android:orientation="vertical"
             android:visibility="gone" >
@@ -64,10 +76,10 @@
 
         <LinearLayout
             style="@style/FooterButtonLayout"
-            android:background="?attr/hardButtonRef"
+            android:background="@drawable/card_outline"
             android:id="@+id/flashcard_layout_ease2"
             android:layout_width="0dip"
-            android:layout_height="@dimen/touch_target"
+            android:layout_height="@dimen/reviewer_touch_target"
             android:layout_weight="1"
             android:orientation="vertical"
             android:visibility="gone" >
@@ -84,10 +96,10 @@
 
         <LinearLayout
             style="@style/FooterButtonLayout"
-            android:background="?attr/goodButtonRef"
+            android:background="@drawable/card_outline"
             android:id="@+id/flashcard_layout_ease3"
             android:layout_width="0dip"
-            android:layout_height="@dimen/touch_target"
+            android:layout_height="@dimen/reviewer_touch_target"
             android:layout_weight="1"
             android:orientation="vertical"
             android:visibility="gone" >
@@ -104,10 +116,10 @@
 
         <LinearLayout
             style="@style/FooterButtonLayout"
-            android:background="?attr/easyButtonRef"
+            android:background="@drawable/card_outline"
             android:id="@+id/flashcard_layout_ease4"
             android:layout_width="0dip"
-            android:layout_height="@dimen/touch_target"
+            android:layout_height="@dimen/reviewer_touch_target"
             android:layout_weight="1"
             android:orientation="vertical"
             android:visibility="gone" >
