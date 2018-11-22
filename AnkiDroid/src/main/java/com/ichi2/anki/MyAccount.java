@@ -29,6 +29,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.google.android.material.button.MaterialButton;
 import com.ichi2.anim.ActivityTransitionAnimation;
 import com.ichi2.async.Connection;
 import com.ichi2.async.Connection.Payload;
@@ -143,18 +144,18 @@ public class MyAccount extends AnkiActivity {
         mUsername = mLoginToMyAccountView.findViewById(R.id.username);
         mPassword = mLoginToMyAccountView.findViewById(R.id.password);
 
-        Button loginButton = mLoginToMyAccountView.findViewById(R.id.login_button);
+        MaterialButton loginButton = mLoginToMyAccountView.findViewById(R.id.login_button);
         loginButton.setOnClickListener(v -> login());
 
         Button resetPWButton = mLoginToMyAccountView.findViewById(R.id.reset_password_button);
         resetPWButton.setOnClickListener(v -> resetPassword());
 
-        Button signUpButton = mLoginToMyAccountView.findViewById(R.id.sign_up_button);
+        MaterialButton signUpButton = mLoginToMyAccountView.findViewById(R.id.sign_up_button);
         signUpButton.setOnClickListener(v -> openUrl(Uri.parse(getResources().getString(R.string.register_url))));
 
         mLoggedIntoMyAccountView = getLayoutInflater().inflate(R.layout.my_account_logged_in, null);
         mUsernameLoggedIn = mLoggedIntoMyAccountView.findViewById(R.id.username_logged_in);
-        Button logoutButton = mLoggedIntoMyAccountView.findViewById(R.id.logout_button);
+        MaterialButton logoutButton = mLoggedIntoMyAccountView.findViewById(R.id.logout_button);
         logoutButton.setOnClickListener(v -> logout());
     }
 
