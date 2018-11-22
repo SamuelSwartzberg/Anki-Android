@@ -36,7 +36,7 @@
         ankidroid:showAsAction="ifRoom"
         android:id="@+id/action_undo"
         android:title="@string/undo"
-        android:icon="@drawable/ic_undo_white_24dp"/>
+        android:icon="@drawable/round_undo"/>
 
     <item
         android:id="@+id/action_preview"

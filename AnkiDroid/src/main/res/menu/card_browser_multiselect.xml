@@ -9,7 +9,7 @@
 	<item
         ankidroid:showAsAction="ifRoom"
         android:id="@+id/action_mark_card"
-        android:icon="@drawable/ic_star_outline_white_24dp"
+        android:icon="@drawable/round_bookmark_border"
         android:title="@string/card_browser_mark_card"/>
 
 
@@ -49,6 +49,6 @@
         ankidroid:showAsAction="ifRoom"
         android:id="@+id/action_undo"
         android:title="@string/undo"
-        android:icon="@drawable/ic_undo_white_24dp"/>
+        android:icon="@drawable/round_undo"/>
 
 </menu>
