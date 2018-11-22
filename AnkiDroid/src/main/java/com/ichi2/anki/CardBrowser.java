@@ -1538,10 +1538,10 @@ public class CardBrowser extends NavigationDrawerActivity implements
 
             if (hasUnmarked) {
                 mActionBarMenu.findItem(R.id.action_mark_card).setTitle(getString(R.string.card_browser_mark_card));
-                mActionBarMenu.findItem(R.id.action_mark_card).setIcon(R.drawable.ic_star_outline_white_24dp);
+                mActionBarMenu.findItem(R.id.action_mark_card).setIcon(R.drawable.round_bookmark_border);
             } else {
                 mActionBarMenu.findItem(R.id.action_mark_card).setTitle(getString(R.string.card_browser_unmark_card));
-                mActionBarMenu.findItem(R.id.action_mark_card).setIcon(R.drawable.ic_star_white_24dp);
+                mActionBarMenu.findItem(R.id.action_mark_card).setIcon(R.drawable.round_bookmark);
             }
         }
     };

@@ -21,19 +21,31 @@
 ~ this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="center"
     android:id="@+id/flashcard_frame"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:layout_margin="0dip">
+    android:layout_height="fill_parent">
 
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="8dp"
+        app:cardBackgroundColor="?attr/colorPrimary"
+        android:minHeight="120dp"
+        app:cardCornerRadius="8dp"
+        >
     <FrameLayout
         android:layout_gravity="center"
         android:id="@+id/flashcard"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
+        android:layout_height="fill_parent"
+        />
+    </com.google.android.material.card.MaterialCardView>
+
     <FrameLayout
         android:layout_gravity="center"
         android:id="@+id/touch_layer"
