@@ -46,8 +46,10 @@
                 android:text="@string/show_answer"
                 android:textSize="14sp"
                 android:textAllCaps="true"
-                android:textAppearance="@color/white"
+                android:textAppearance="?attr/actionBarTextColor"
                 app:cornerRadius="8dp"
+                app:strokeColor="?attr/answerButtonOutlineColor"
+                app:strokeWidth="1dp"
                 />
         </LinearLayout>
 
