@@ -10,11 +10,13 @@
     <color name="theme_dark_drawer_row_current">#33999999</color>
     <color name="theme_dark_drawer_item">#DEFFFFFF</color>
 
+
     <style name="Theme_Dark" parent="@style/Theme.AppCompat">
         <!-- Android colors -->
         <item name="colorPrimary">@color/theme_dark_primary</item>
         <item name="colorPrimaryDark">@color/theme_dark_primary_dark</item>
         <item name="colorAccent">@color/theme_dark_accent</item>
+        <item name="colorSecondary">@color/theme_dark_secondary_text</item>
         <item name="android:textColor">@color/theme_dark_primary_text</item>
         <item name="android:textColorPrimary">@color/theme_dark_primary_text</item>
         <item name="android:textColorSecondary">@color/theme_dark_secondary_text</item>
@@ -50,6 +52,7 @@
         <item name="topBarColor">@color/theme_dark_primary_light</item>
         <item name="maxTimerColor">@color/material_red_300</item>
         <item name="answerButtonTextColor">@color/white</item>
+        <item name="answerButtonOutlineColor">#00ffffff</item>
         <item name="againButtonTextColor">@color/white</item>
         <item name="hardButtonTextColor">@color/white</item>
         <item name="goodButtonTextColor">@color/white</item>
@@ -79,6 +82,7 @@
         <!-- FAB -->
         <item name="fab_normal">@color/material_light_blue_700</item>
         <item name="fab_pressed">@color/material_light_blue_900</item>
+        <item name="fab_icon_color">@color/theme_dark_secondary_text</item>
         <item name="fab_labelsTextColor">@color/white</item>
         <item name="fab_background">@color/material_grey_700</item>
         <item name="fab_item_background">@drawable/fab_label_background_pre21</item>
