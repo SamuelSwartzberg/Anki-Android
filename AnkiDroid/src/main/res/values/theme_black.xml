@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="theme_black_primary">#070707</color>
+    <color name="theme_black_primary">#000000</color>
     <color name="theme_black_primary_dark">#000000</color>
     <color name="theme_black_primary_light">#151515</color>
-    <color name="theme_black_accent">#1565C0</color>
-    <color name="theme_black_primary_text">#fff</color> <!-- Alternative: #808080 -->
-    <color name="theme_black_secondary_text">#a0a0a0</color>
-    <color name="theme_black_row_current">#1a1a1a</color>
+    <color name="theme_black_accent">@color/black</color>
+    <color name="theme_black_primary_text">#e0e0e0</color>
+    <color name="theme_black_secondary_text">#64ffffff</color>
+    <color name="theme_black_row_current">#16ffffff</color>
+
 
     <style name="Theme_Dark.Black">
         <!-- Android colors -->
         <item name="colorPrimary">@color/theme_black_primary_dark</item>
         <item name="colorPrimaryDark">@color/black</item>
         <item name="colorAccent">@color/theme_black_accent</item>
+        <item name="colorSecondary">@color/theme_black_secondary_text</item>
         <item name="android:textColor">@color/theme_black_primary_text</item>
         <item name="android:textColorPrimary">@color/theme_black_primary_text</item>
         <item name="android:textColorSecondary">@color/theme_black_secondary_text</item>
@@ -25,7 +27,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="windowActionModeOverlay">true</item>
-        <item name="actionBarTextColor">@color/white</item>
+        <item name="actionBarTextColor">@color/theme_black_primary_text</item>
         <item name="actionBarPopupBackgroundColor">@color/theme_black_primary_light</item>
         <item name="actionBarPopupTextColor">@color/theme_black_primary_text</item>
         <item name="actionModeBackground">@color/theme_black_primary_dark</item>
@@ -40,11 +42,12 @@
         <item name="newCountColor">@color/material_blue_700</item>
         <item name="learnCountColor">@color/material_red_400</item>
         <item name="reviewCountColor">@color/material_green_400</item>
-        <item name="zeroCountColor">#202020</item>
+        <item name="zeroCountColor">@color/theme_black_secondary_text</item>
         <!-- Reviewer colors -->
         <item name="topBarColor">@color/theme_black_primary</item>
         <item name="maxTimerColor">@color/material_red_300</item>
         <item name="answerButtonTextColor">@color/theme_black_primary_text</item>
+        <item name="answerButtonOutlineColor">#48ffffff</item>
         <item name="againButtonTextColor">@color/material_red_400</item>
         <item name="hardButtonTextColor">@color/white</item>
         <item name="goodButtonTextColor">@color/material_green_400</item>
@@ -73,8 +76,9 @@
         <!-- Note editor colors -->
         <item name="duplicateColor">#855</item>
         <!-- FAB -->
-        <item name="fab_normal">#ff303030</item>
-        <item name="fab_pressed">#c8303030</item> <!-- 55 less opacity than fab_normal -->
+        <item name="fab_normal">@color/anki_color</item>
+        <item name="fab_pressed">@color/anki_color_dark</item>
+        <item name="fab_icon_color">@color/white</item>
         <item name="fab_labelsTextColor">@color/theme_black_primary_text</item>
         <item name="fab_background">@color/theme_black_primary_light</item>
         <item name="fab_item_background">@drawable/fab_label_background_black_pre21</item>
