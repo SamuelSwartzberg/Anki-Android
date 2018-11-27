@@ -1817,9 +1817,9 @@ public abstract class AbstractFlashcardViewer extends NavigationDrawerActivity {
                 break;
         }
 
-        mTextBarNew.setText(newCount + " New");
-        mTextBarLearn.setText(lrnCount + " Learned");
-        mTextBarReview.setText(revCount + " Reviewable");
+        mTextBarNew.setText(newCount + ", ");
+        mTextBarLearn.setText(lrnCount + ", ");
+        mTextBarReview.setText(revCount);
     }
 
     /*
