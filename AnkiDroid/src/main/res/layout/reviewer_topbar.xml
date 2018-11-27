@@ -1,63 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/top_bar"
-    android:layout_width="fill_parent"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
     android:paddingTop="3dp"
     android:paddingBottom="3dp"
-    android:gravity="center_vertical"
     android:background="?attr/topBarColor">
 
-    <LinearLayout
-        android:id="@+id/card_counts_layout"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:id="@+id/subtitleLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
         >
-        <TextView
-            android:id="@+id/new_number"
-            android:layout_height="wrap_content"
+
+        <RelativeLayout
+            android:id="@+id/card_counts_layout"
             android:layout_width="wrap_content"
-            android:layout_toLeftOf="@id/learn_number"
+            android:layout_height="wrap_content"
+            android:background="@drawable/oval_outline"
+            >
+
+            <TextView
+                android:id="@+id/new_number"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:paddingLeft="8dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:textSize="14sp"
+                android:textColor="@color/reviewer_text_color"
+                />
+            <TextView
+                android:id="@+id/learn_number"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_toRightOf="@id/new_number"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:textSize="14sp"
+                android:textColor="@color/reviewer_text_color"
+                />
+            <TextView
+                android:id="@+id/review_number"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_toRightOf="@+id/learn_number"
+                android:paddingRight="8dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:textSize="14sp"
+                android:textColor="@color/reviewer_text_color"
+                />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textviewSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginRight="8dp"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-            android:paddingTop="2dp"
-            android:paddingBottom="2dp"
+            android:layout_toLeftOf="@id/card_counts_layout"
+            android:textColor="?android:textColorSecondary"
             android:textSize="14sp"
-            android:textColor="@color/reviewer_text_color"
-            android:background="@drawable/oval_outline"
-            />
-        <TextView
-            android:id="@+id/learn_number"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-            android:paddingTop="2dp"
-            android:paddingBottom="2dp"
-            android:textSize="14sp"
-            android:textColor="@color/reviewer_text_color"
-            android:background="@drawable/oval_outline"
-            />
-        <TextView
-            android:id="@+id/review_number"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_toRightOf="@+id/learn_number"
-            android:layout_marginLeft="8dp"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-            android:paddingTop="2dp"
-            android:paddingBottom="2dp"
-            android:textSize="14sp"
-            android:textColor="@color/reviewer_text_color"
-            android:background="@drawable/oval_outline"
             />
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
     <Chronometer
