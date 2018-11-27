@@ -12,6 +12,7 @@
         <item name="colorPrimary">@color/theme_plain_primary</item>
         <item name="colorPrimaryDark">@color/theme_plain_primary_dark</item>
         <item name="colorAccent">@color/theme_plain_accent</item>
+        <item name="colorSecondary">@color/theme_plain_secondary_text</item>
         <item name="android:textColor">@color/theme_plain_primary_text</item>
         <item name="android:textColorPrimary">@color/theme_plain_primary_text</item>
         <item name="android:textColorSecondary">@color/theme_plain_secondary_text</item>
@@ -31,6 +32,7 @@
         <!-- FAB -->
         <item name="fab_normal">@color/theme_plain_accent</item>
         <item name="fab_pressed">#c8607d8b</item> <!-- 55 less opacity than fab_normal -->
+        <item name="fab_icon_color">@color/theme_plain_secondary_text</item>
         <item name="fab_background">@color/theme_plain_primary_dark</item>
     </style>
 
