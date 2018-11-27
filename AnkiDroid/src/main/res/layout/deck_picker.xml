@@ -56,7 +56,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="96dp"
             android:gravity="center"
-            android:textColor="@color/theme_light_secondary_text"
+            android:textColor="?android:textColorSecondary"
             />
         <include layout="@layout/fab_oval_main"
             android:layout_width="@dimen/fab_width"
