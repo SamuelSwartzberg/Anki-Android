@@ -34,15 +34,24 @@
                 android:fontFamily="@font/product_sans_regular"
                 style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
                 />
+
+            <!-- DELETE THIS TEXTVIEW (BELOW) LATER.
+            This textview covers the one that shows the name of the deck. I chose to hide this textview
+            for my own review purposes because having the name of my subdecks made certain flashcards pointless. -->
             <TextView
-                android:id="@+id/textviewSubtitle"
-                android:layout_width="wrap_content"
+                android:id="@+id/textviewTitleFAKEOVERLAY"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/textviewTitle"
-                android:textColor="?android:textColorSecondary"
-                android:textSize="14sp"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="@dimen/toolbar_title_margin"
+                android:text="Study"
+                android:textColor="?attr/actionBarTextColor"
+                android:textSize="22sp"
+                android:fontFamily="@font/product_sans_regular"
+                android:background="?attr/colorPrimary"
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
                 />
+
             <!-- Colored dot(s) that appear after pushing a button. -->
             <TextView
                 android:id="@+id/chosen_answer"
@@ -59,7 +68,7 @@
                 layout="@layout/reviewer_topbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/textviewSubtitle"
+                android:layout_below="@id/textviewTitle"
                 />
             <include layout="@layout/reviewer_flashcard"
                 android:layout_width="match_parent"
