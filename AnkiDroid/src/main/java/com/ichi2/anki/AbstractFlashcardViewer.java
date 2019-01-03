@@ -32,6 +32,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -55,6 +56,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.ScaleAnimation;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.JsResult;
@@ -226,6 +229,7 @@ public abstract class AbstractFlashcardViewer extends NavigationDrawerActivity {
     protected TextView mNext2;
     protected TextView mNext3;
     protected TextView mNext4;
+    private TextView mFlipCard;
     protected EditText mAnswerField;
     protected TextView mEase1;
     protected TextView mEase2;
@@ -249,6 +253,12 @@ public abstract class AbstractFlashcardViewer extends NavigationDrawerActivity {
 
     private boolean mConfigurationChanged = false;
     private int mShowChosenAnswerLength = 2000;
+
+    int animationTimeSize;
+    ScaleAnimation animateScaleSmaller;
+    ScaleAnimation animateScaleLarger;
+
+
 
     /**
      * A record of the last time the "show answer" or ease buttons were pressed. We keep track
@@ -363,6 +373,7 @@ public abstract class AbstractFlashcardViewer extends NavigationDrawerActivity {
             if (SystemClock.elapsedRealtime() - mLastClickTime < DOUBLE_TAP_IGNORE_THRESHOLD) {
                 return;
             }
+            // !!! Animate here
             mLastClickTime = SystemClock.elapsedRealtime();
             mTimeoutHandler.removeCallbacks(mShowAnswerTask);
             displayCardAnswer();
@@ -1283,22 +1294,18 @@ public abstract class AbstractFlashcardViewer extends NavigationDrawerActivity {
         gestureDetector = new GestureDetectorCompat(this, new MyGestureDetector());
 
         mEase1 = (TextView) findViewById(R.id.ease1);
-        mEase1.setTypeface(TypefaceHelper.get(this, "Roboto-Medium"));
         mEase1Layout = (LinearLayout) findViewById(R.id.flashcard_layout_ease1);
         mEase1Layout.setOnClickListener(mSelectEaseHandler);
 
         mEase2 = (TextView) findViewById(R.id.ease2);
-        mEase2.setTypeface(TypefaceHelper.get(this, "Roboto-Medium"));
         mEase2Layout = (LinearLayout) findViewById(R.id.flashcard_layout_ease2);
         mEase2Layout.setOnClickListener(mSelectEaseHandler);
 
         mEase3 = (TextView) findViewById(R.id.ease3);
-        mEase3.setTypeface(TypefaceHelper.get(this, "Roboto-Medium"));
         mEase3Layout = (LinearLayout) findViewById(R.id.flashcard_layout_ease3);
         mEase3Layout.setOnClickListener(mSelectEaseHandler);
 
         mEase4 = (TextView) findViewById(R.id.ease4);
-        mEase4.setTypeface(TypefaceHelper.get(this, "Roboto-Medium"));
         mEase4Layout = (LinearLayout) findViewById(R.id.flashcard_layout_ease4);
         mEase4Layout.setOnClickListener(mSelectEaseHandler);
 
@@ -1306,10 +1313,12 @@ public abstract class AbstractFlashcardViewer extends NavigationDrawerActivity {
         mNext2 = (TextView) findViewById(R.id.nextTime2);
         mNext3 = (TextView) findViewById(R.id.nextTime3);
         mNext4 = (TextView) findViewById(R.id.nextTime4);
+        /*
         mNext1.setTypeface(TypefaceHelper.get(this, "Roboto-Regular"));
         mNext2.setTypeface(TypefaceHelper.get(this, "Roboto-Regular"));
         mNext3.setTypeface(TypefaceHelper.get(this, "Roboto-Regular"));
         mNext4.setTypeface(TypefaceHelper.get(this, "Roboto-Regular"));
+        */
 
         if (!mShowNextReviewTime) {
             mNext1.setVisibility(View.GONE);
@@ -1318,8 +1327,15 @@ public abstract class AbstractFlashcardViewer extends NavigationDrawerActivity {
             mNext4.setVisibility(View.GONE);
         }
 
-        Button mFlipCard = (MaterialButton) findViewById(R.id.flip_card);
-        mFlipCard.setTypeface(TypefaceHelper.get(this, "Roboto-Medium"));
+
+        // Animations for FAB oval
+        animationTimeSize = 200;
+        animateScaleSmaller = new ScaleAnimation(Animation.RELATIVE_TO_SELF, 0, Animation.RELATIVE_TO_SELF, 0, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        animateScaleSmaller.setDuration(animationTimeSize);
+        animateScaleLarger = new ScaleAnimation(0, Animation.RELATIVE_TO_SELF, 0, Animation.RELATIVE_TO_SELF, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        animateScaleLarger.setDuration(animationTimeSize);
+
+        mFlipCard = (TextView) findViewById(R.id.flip_card);
         mFlipCardLayout = (LinearLayout) findViewById(R.id.flashcard_layout_flip);
         mFlipCardLayout.setOnClickListener(mFlipCardListener);
 
@@ -1529,7 +1545,9 @@ public abstract class AbstractFlashcardViewer extends NavigationDrawerActivity {
 
     protected void showEaseButtons() {
         // hide flipcard button
-        mFlipCardLayout.setVisibility(View.GONE);
+        animateScaleSmaller.setDuration(animationTimeSize);
+        mFlipCardLayout.startAnimation(animateScaleSmaller);
+
 
         int buttonCount;
         try {
@@ -1548,46 +1566,7 @@ public abstract class AbstractFlashcardViewer extends NavigationDrawerActivity {
                 R.attr.hardButtonTextColor,
                 R.attr.goodButtonTextColor,
                 R.attr.easyButtonTextColor});
-        mEase1Layout.setVisibility(View.VISIBLE);
-        switch (buttonCount) {
-            case 2:
-                // Ease 2 is "good"
-                mEase2Layout.setVisibility(View.VISIBLE);
-                mEase2.setText(R.string.ease_button_good);
-                mEase2.setTextColor(textColor[2]);
-                mNext2.setTextColor(textColor[2]);
-                mEase2Layout.requestFocus();
-                break;
-            case 3:
-                // Ease 2 is good
-                mEase2Layout.setVisibility(View.VISIBLE);
-                mEase2.setText(R.string.ease_button_good);
-                mEase2.setTextColor(textColor[2]);
-                mNext2.setTextColor(textColor[2]);
-                // Ease 3 is easy
-                mEase3Layout.setVisibility(View.VISIBLE);
-                mEase3.setText(R.string.ease_button_easy);
-                mEase3.setTextColor(textColor[3]);
-                mNext3.setTextColor(textColor[3]);
-                mEase2Layout.requestFocus();
-                break;
-            default:
-                mEase2Layout.setVisibility(View.VISIBLE);
-                // Ease 2 is "hard"
-                mEase2Layout.setVisibility(View.VISIBLE);
-                mEase2.setText(R.string.ease_button_hard);
-                mEase2.setTextColor(textColor[1]);
-                mNext2.setTextColor(textColor[1]);
-                mEase2Layout.requestFocus();
-                // Ease 3 is good
-                mEase3Layout.setVisibility(View.VISIBLE);
-                mEase3.setText(R.string.ease_button_good);
-                mEase3.setTextColor(textColor[2]);
-                mNext3.setTextColor(textColor[2]);
-                mEase4Layout.setVisibility(View.VISIBLE);
-                mEase3Layout.requestFocus();
-                break;
-        }
+
 
         // Show next review time
         if (mShowNextReviewTime) {
@@ -1600,6 +1579,59 @@ public abstract class AbstractFlashcardViewer extends NavigationDrawerActivity {
                 mNext4.setText(mSched.nextIvlStr(this, mCurrentCard, 4));
             }
         }
+
+
+
+        final Handler mFlipCardLayoutHandler = new Handler();
+        mFlipCardLayoutHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mFlipCardLayout.setVisibility(View.GONE);
+                mEase1Layout.setVisibility(View.VISIBLE);
+                switch (buttonCount) {
+                    case 2:
+                        // Ease 2 is "good"
+                        mEase2Layout.setVisibility(View.VISIBLE);
+                        mEase2.setText(R.string.ease_button_good);
+                        mEase2.setTextColor(textColor[2]);
+                        mNext2.setTextColor(textColor[2]);
+                        mEase2Layout.requestFocus();
+                        break;
+                    case 3:
+                        // Ease 2 is good
+                        mEase2Layout.setVisibility(View.VISIBLE);
+                        mEase2.setText(R.string.ease_button_good);
+                        mEase2.setTextColor(textColor[2]);
+                        mNext2.setTextColor(textColor[2]);
+                        // Ease 3 is easy
+                        mEase3Layout.setVisibility(View.VISIBLE);
+                        mEase3.setText(R.string.ease_button_easy);
+                        mEase3.setTextColor(textColor[3]);
+                        mNext3.setTextColor(textColor[3]);
+                        mEase2Layout.requestFocus();
+                        break;
+                    default:
+                        mEase2Layout.setVisibility(View.VISIBLE);
+                        // Ease 2 is "hard"
+                        mEase2Layout.setVisibility(View.VISIBLE);
+                        mEase2.setText(R.string.ease_button_hard);
+                        mEase2.setTextColor(textColor[1]);
+                        mNext2.setTextColor(textColor[1]);
+                        mEase2Layout.requestFocus();
+                        // Ease 3 is good
+                        mEase3Layout.setVisibility(View.VISIBLE);
+                        mEase3.setText(R.string.ease_button_good);
+                        mEase3.setTextColor(textColor[2]);
+                        mNext3.setTextColor(textColor[2]);
+                        mEase4Layout.setVisibility(View.VISIBLE);
+                        mEase3Layout.requestFocus();
+                        break;
+                }
+            }
+        }, animationTimeSize);
+
+
+
     }
 
 
@@ -1609,6 +1641,9 @@ public abstract class AbstractFlashcardViewer extends NavigationDrawerActivity {
         mEase3Layout.setVisibility(View.GONE);
         mEase4Layout.setVisibility(View.GONE);
         mFlipCardLayout.setVisibility(View.VISIBLE);
+        mFlipCardLayout.startAnimation(animateScaleLarger);
+        animateScaleLarger.setDuration(animationTimeSize);
+
         if (typeAnswer()) {
             mAnswerField.requestFocus();
         } else {
