@@ -19,9 +19,6 @@
             android:id="@+id/front_frame"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <include
-                layout="@layout/toolbar_reviewer"
-                />
 
             <TextView
                 android:id="@+id/textviewTitle"
@@ -75,8 +72,33 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="16dp"
                 />
+
+            <include
+                layout="@layout/toolbar_reviewer"
+                />
+
             <include layout="@layout/reviewer_answer_buttons"
                 />
+
+            <!--
+            <LinearLayout
+                android:id="@+id/flashcard_layout_flip"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/fab_margin"
+                >
+                <include
+                    layout="@layout/fab_oval_show_answer"
+                    android:id="@+id/flip_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+            -->
+
+
 
         </RelativeLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
