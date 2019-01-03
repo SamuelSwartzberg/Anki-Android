@@ -1,31 +1,29 @@
-Anki for Android
+Anki for Android - Redesign
 -------
-A semi-official port of the open source [Anki](http://ankisrs.net/index.html) spaced repetition flashcard system to Android. Memorize anything with AnkiDroid!
+Anki for Android is a semi-official port of the open source [Anki](http://ankisrs.net/index.html) spaced repetition flashcard system. This redesign follows the updated Material Design guidelines (https://material.io/design/). It makes the app more user-friendly by allowing the flashcards to become the focus of the app. 
 
-Material Design Update 2018
+
+
+
+Old Version
 -------
-
-Current design:
 ![Screenshot](https://raw.githubusercontent.com/ankidroid/ankidroiddocs/master/img/4-reviewer.png)
 
-Redesign 2018:
-![Screenshot](https://github.com/nickdvlpr/Anki-Android/blob/master/docs/graphics/src/reviewer_flaschard2.png?raw=true)
 
 
-
-
-Install
+New Version
 -------
-Install directly from [here on github](https://github.com/ankidroid/Anki-Android/releases/latest) or stay up-to-date
-automatically by installing via an app store:
+![Screenshot](https://github.com/nickdvlpr/Anki-Android/docs/marketing/screenshots/en-US/phone/material_design_update_1.png?raw=true)
 
-<a href="https://play.google.com/store/apps/details?id=com.ichi2.anki&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height="50px"/></a>
-<a href="https://f-droid.org/repository/browse/?fdid=com.ichi2.anki"><img alt="F-Droid" src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Get_it_on_F-Droid.svg" height="50px"/></a>
+
+
 
 Help
 ----
 Check the [user manual](https://ankidroid.org/docs/manual.html) and the wiki for usage instructions. See the [help page](https://ankidroid.org/docs/help.html) 
 for how to submit a bug report or contact a project member, etc.
+
+
 
 Contribute
 ----------
