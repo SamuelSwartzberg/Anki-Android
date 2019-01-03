@@ -160,6 +160,7 @@ dependencies {
     implementation 'com.getbase:floatingactionbutton:1.10.1'
     implementation 'androidx.annotation:annotation:1.0.1'
     implementation 'org.bitbucket.cowwoc:diff-match-patch:1.2'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha3'
 
     // May need a resolution strategy for support libs to our versions
     implementation'ch.acra:acra-http:5.2.1'
