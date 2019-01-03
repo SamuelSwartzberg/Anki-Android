@@ -76,7 +76,7 @@
         <!-- Note editor colors -->
         <item name="duplicateColor">#855</item>
         <!-- FAB -->
-        <item name="fab_normal">@color/anki_color</item>
+        <item name="fab_normal">?colorAccent</item>
         <item name="fab_pressed">@color/anki_color_dark</item>
         <item name="fab_icon_color">@color/white</item>
         <item name="fab_labelsTextColor">@color/theme_black_primary_text</item>
