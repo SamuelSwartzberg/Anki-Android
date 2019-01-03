@@ -5,14 +5,10 @@ Anki for Android is a semi-official port of the open source [Anki](http://ankisr
 
 
 
-Old Version
+Old Version → New Version
 -------
-![Screenshot](https://raw.githubusercontent.com/ankidroid/ankidroiddocs/master/img/4-reviewer.png)
+![Screenshot](https://github.com/nickdvlpr/Anki-Android/blob/master/docs/marketing/screenshots/en-US/phone/old_1.png)
 
-
-
-New Version
--------
 ![Screenshot](https://github.com/nickdvlpr/Anki-Android/blob/master/docs/marketing/screenshots/en-US/phone/material_design_update_1.png)
 
 
