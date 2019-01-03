@@ -3,14 +3,14 @@ Anki for Android - Redesign
 Anki for Android is a semi-official port of the open source [Anki](http://ankisrs.net/index.html) spaced repetition flashcard system. This redesign follows the updated Material Design guidelines (https://material.io/design/). It makes the app more user-friendly by allowing the flashcards to become the focus of the app. 
 
 
-
-
-Old Version → New Version
--------
-![Screenshot](https://github.com/nickdvlpr/Anki-Android/blob/master/docs/marketing/screenshots/en-US/phone/old_1.png)
-
 ![Screenshot](https://github.com/nickdvlpr/Anki-Android/blob/master/docs/marketing/screenshots/en-US/phone/material_design_update_1.png)
 
+
+
+
+Old Version
+-------
+![Screenshot](https://github.com/nickdvlpr/Anki-Android/blob/master/docs/marketing/screenshots/en-US/phone/old_1.png)
 
 
 
