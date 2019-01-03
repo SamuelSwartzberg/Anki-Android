@@ -13,7 +13,7 @@ Old Version
 
 New Version
 -------
-![Screenshot](https://github.com/nickdvlpr/Anki-Android/docs/marketing/screenshots/en-US/phone/material_design_update_1.png?raw=true)
+![Screenshot](https://github.com/nickdvlpr/Anki-Android/docs/marketing/screenshots/en-US/phone/material_design_update_1.png)
 
 
 
