@@ -28,7 +28,7 @@
                 android:layout_marginTop="@dimen/toolbar_title_margin"
                 android:textColor="?attr/actionBarTextColor"
                 android:textSize="22sp"
-                android:fontFamily="@font/product_sans_regular"
+                android:fontFamily="@font/nunito_regular"
                 style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
                 />
 
@@ -44,7 +44,7 @@
                 android:text="Study"
                 android:textColor="?attr/actionBarTextColor"
                 android:textSize="22sp"
-                android:fontFamily="@font/product_sans_regular"
+                android:fontFamily="@font/nunito_regular"
                 android:background="?attr/colorPrimary"
                 style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
                 />
