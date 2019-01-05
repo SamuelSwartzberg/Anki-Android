@@ -65,7 +65,7 @@ APIs. It's visible when there aren't enough decks to fill the screen.
         <item name="topBarColor">@color/white</item>
         <item name="maxTimerColor">@color/material_red_500</item>
         <item name="answerButtonTextColor">@color/white</item>
-        <item name="answerButtonOutlineColor">#00ffffff</item>
+        <item name="outlineColor">#00ffffff</item>
         <item name="againButtonTextColor">@color/material_red_300</item>
         <item name="hardButtonTextColor">@color/material_blue_grey_500</item>
         <item name="goodButtonTextColor">@color/material_green_300</item>
