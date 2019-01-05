@@ -47,7 +47,7 @@
         <item name="topBarColor">@color/theme_black_primary</item>
         <item name="maxTimerColor">@color/material_red_300</item>
         <item name="answerButtonTextColor">@color/theme_black_primary_text</item>
-        <item name="answerButtonOutlineColor">#48ffffff</item>
+        <item name="outlineColor">#48ffffff</item>
         <item name="againButtonTextColor">@color/material_red_400</item>
         <item name="hardButtonTextColor">@color/white</item>
         <item name="goodButtonTextColor">@color/material_green_400</item>
