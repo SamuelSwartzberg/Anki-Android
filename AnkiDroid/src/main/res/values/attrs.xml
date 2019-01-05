@@ -56,7 +56,7 @@
     <attr name="goodButtonRef" format= "reference"/>
     <attr name="easyButtonRef" format= "reference"/>
     <attr name="answerButtonTextColor" format="color"/>
-    <attr name="answerButtonOutlineColor" format="color"/>
+    <attr name="outlineColor" format="color"/>
     <attr name="againButtonTextColor" format="color"/>
     <attr name="hardButtonTextColor" format="color"/>
     <attr name="goodButtonTextColor" format="color"/>
