@@ -17,7 +17,7 @@
         android:text="Anki"
         android:textColor="?attr/actionBarTextColor"
         android:textSize="36sp"
-        android:fontFamily="@font/product_sans_regular"
+        android:fontFamily="@font/nunito_regular"
         />
 
     <RelativeLayout
