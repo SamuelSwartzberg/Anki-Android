@@ -83,18 +83,18 @@ public class OverviewStatsBuilder {
 
         String css = "<style>\n" +
                 "h1, h3 { margin-bottom: 0; margin-top: 1em; text-transform: capitalize; }\n" +
-                ".pielabel { text-align:center; padding:0px; color:white; }\n" +
+                ".pielabel { text-align:left; padding:0px; color:white; }\n" +
                 "body {color:" + textColor + ";}\n" +
                 "</style>";
 
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("<center>");
+        stringBuilder.append("<align-left>");
         stringBuilder.append(css);
         appendTodaysStats(stringBuilder);
 
         appendOverViewStats(stringBuilder);
 
-        stringBuilder.append("</center>");
+        stringBuilder.append("</align-left>");
         return stringBuilder.toString();
     }
 
@@ -125,6 +125,7 @@ public class OverviewStatsBuilder {
         stringBuilder.append(res.getString(R.string.stats_overview_forecast_due_tomorrow, oStats.forecastDueTomorrow));
 
         stringBuilder.append("<br>");
+        stringBuilder.append("<br>");
 
         // REVIEW COUNT
         stringBuilder.append(_subtitle(res.getString(R.string.stats_review_count).toUpperCase()));
@@ -138,6 +139,7 @@ public class OverviewStatsBuilder {
             stringBuilder.append(res.getString(R.string.stats_overview_reviews_per_day_all, oStats.reviewsPerDayOnAll));
         }
 
+        stringBuilder.append("<br>");
         stringBuilder.append("<br>");
 
         //REVIEW TIME
@@ -153,6 +155,7 @@ public class OverviewStatsBuilder {
         // TODO: Average answer time: x.xs (x.x cards/minute)
 
         stringBuilder.append("<br>");
+        stringBuilder.append("<br>");
 
         // ADDED
         stringBuilder.append(_subtitle(res.getString(R.string.stats_added).toUpperCase()));
@@ -160,6 +163,7 @@ public class OverviewStatsBuilder {
         stringBuilder.append("<br>");
         stringBuilder.append(res.getString(R.string.stats_overview_new_cards_per_day, oStats.newCardsPerDay));
 
+        stringBuilder.append("<br>");
         stringBuilder.append("<br>");
 
         // INTERVALS
@@ -169,12 +173,15 @@ public class OverviewStatsBuilder {
         stringBuilder.append("<br>");
         stringBuilder.append(res.getString(R.string.stats_overview_longest_interval));
         stringBuilder.append(Utils.roundedTimeSpan(mWebView.getContext(), (int) Math.round(oStats.longestInterval * Stats.SECONDS_PER_DAY)));
+        stringBuilder.append("<br>");
     }
 
     private void appendTodaysStats(StringBuilder stringBuilder) {
         Stats stats = new Stats(mCol, mDeckId);
         int[] todayStats = stats.calculateTodayStats();
         stringBuilder.append(_title(mWebView.getResources().getString(R.string.stats_today)));
+        stringBuilder.append("<br>");
+
         Resources res = mWebView.getResources();
         final int minutes = (int) Math.round(todayStats[THETIME_INDEX] / 60.0);
         final String span = res.getQuantityString(R.plurals.time_span_minutes, minutes, minutes);
@@ -194,6 +201,9 @@ public class OverviewStatsBuilder {
         } else {
             stringBuilder.append(res.getString(R.string.stats_today_no_mature_cards));
         }
+        stringBuilder.append("<br>");
+        stringBuilder.append("<br>");
+
     }
 
 

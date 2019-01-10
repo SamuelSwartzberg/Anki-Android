@@ -153,7 +153,7 @@ public class ChartBuilder {
         double xTicks = ticksCalcX(desiredPixelDistanceBetweenTicks, rect, mFirstElement, mLastElement);
         setupXaxis(plotSheet, xTicks, true);
 
-        double yTicks = ticksCalcY(desiredPixelDistanceBetweenTicks, rect, 0, mMaxCards * Y_AXIS_STRETCH_FACTOR);
+        double yTicks = 100; // ticksCalcY(desiredPixelDistanceBetweenTicks, rect, 0, mMaxCards * Y_AXIS_STRETCH_FACTOR)
         setupYaxis(plotSheet, hiddenPlotSheet, yTicks, mAxisTitles[1], false, true);
 
         //0 = X-axis title
@@ -380,7 +380,7 @@ public class ChartBuilder {
 
     public double ticksCalcY(int pixelDistance, RectangleWrap field, double start, double end) {
 
-        double size = ticsCalc(pixelDistance, field, end - start);
+        double size = 100; // ticsCalc(pixelDistance, field, end - start)
         Timber.d("ChartBuilder ticksCalcY: pixelDistance: %d, ticks: %,.2f, start: %,.2f, end: %,.2f, height: %d", pixelDistance, size, start, end, field.height);
         return size;
     }
@@ -420,7 +420,7 @@ public class ChartBuilder {
         //Compute size * magn so that we return one number
         size *= magn;
 
-        Timber.d("ChartBuilder ticksCalc : pixelDistance: %d, ticks: %,.2f, deltaRange: %,.2f, height: %d", pixelDistance, size, deltaRange, field.height);
+        // Timber.d("ChartBuilder ticksCalc : pixelDistance: %d, ticks: %,.2f, deltaRange: %,.2f, height: %d", pixelDistance, size, deltaRange, field.height);
 
         return size;
     }

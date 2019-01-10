@@ -1329,7 +1329,7 @@ public abstract class AbstractFlashcardViewer extends NavigationDrawerActivity {
 
 
         // Animations for FAB oval
-        animationTimeSize = 200;
+        animationTimeSize = 50;
         animateScaleSmaller = new ScaleAnimation(Animation.RELATIVE_TO_SELF, 0, Animation.RELATIVE_TO_SELF, 0, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         animateScaleSmaller.setDuration(animationTimeSize);
         animateScaleLarger = new ScaleAnimation(0, Animation.RELATIVE_TO_SELF, 0, Animation.RELATIVE_TO_SELF, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
