@@ -4,10 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     android:orientation="vertical"
-    android:gravity="center_vertical"
+    android:gravity="center"
     tools:background="@android:color/holo_orange_light"
     tools:layout_height="wrap_content">
 
+    <!-- These are the toolbar title and subtitle textviews for Statistics and Card Browser (including dropdown arrow in drawableRight). -->
     <TextView
         android:id="@+id/dropdown_deck_name"
         android:layout_width="wrap_content"
@@ -16,6 +17,7 @@
         android:drawablePadding="16dp"
         android:drawableRight="@drawable/spinner_triangle"
         android:textColor="?attr/actionBarTextColor"
+        android:fontFamily="@font/product_sans_regular"
         style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
         tools:text="@string/deck_summary_all_decks" />
 
@@ -25,7 +27,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/action_bar_subtitle_top_margin"
         android:singleLine="true"
+        android:drawableRight="@drawable/spinner_triangle_transparent"
         android:textColor="?attr/actionBarTextColor"
+        android:fontFamily="@font/product_sans_regular"
         style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
         tools:text="42 cards shown" />
 

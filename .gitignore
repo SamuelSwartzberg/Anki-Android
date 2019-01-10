@@ -54,3 +54,4 @@ tools/crowdin_key.txt
 # Testing / quality remnants
 AnkiDroid/ACRA-INSTALLATION
 .codacy.json
+AnkiDroid/src/main/res/font/product_sans_regular.ttf

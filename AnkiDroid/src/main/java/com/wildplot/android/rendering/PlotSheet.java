@@ -279,7 +279,7 @@ public class PlotSheet implements Drawable {
 
                 g.drawString(" : " + legendName, xPointer + height, ySpacer + height);
                 xPointer += height * 1.3f + stringWidth;
-                Timber.d("drawing a legend Item: (%s) %d, x: %,.2f , y: %,.2f", legendName, legendCnt, xPointer + height, ySpacer + height);
+                // Timber.d("drawing a legend Item: (%s) %d, x: %,.2f , y: %,.2f", legendName, legendCnt, xPointer + height, ySpacer + height);
 
             }
             g.setFontSize(oldFontSize);
