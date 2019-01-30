@@ -17,7 +17,7 @@
         android:drawablePadding="16dp"
         android:drawableRight="@drawable/spinner_triangle"
         android:textColor="?attr/actionBarTextColor"
-        android:fontFamily="@font/product_sans_regular"
+        android:fontFamily="@font/nunito_regular"
         style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
         tools:text="@string/deck_summary_all_decks" />
 
@@ -29,7 +29,7 @@
         android:singleLine="true"
         android:drawableRight="@drawable/spinner_triangle_transparent"
         android:textColor="?attr/actionBarTextColor"
-        android:fontFamily="@font/product_sans_regular"
+        android:fontFamily="@font/nunito_regular"
         style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
         tools:text="42 cards shown" />
 
