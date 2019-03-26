@@ -37,7 +37,7 @@
     <style name="FooterButtonLayoutBase">
         <item name="android:layout_height">48dp</item>
         <item name="android:textSize">14sp</item>
-        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:fontFamily">@font/font_custom_regular</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_gravity">center_vertical</item>
         <item name="android:singleLine">true</item>
@@ -51,48 +51,48 @@
         <item name="android:gravity">bottom|center_horizontal</item>
         <item name="android:singleLine">true</item>
         <item name="android:textSize">12.5sp</item>
-        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:fontFamily">@font/font_custom_regular</item>
     </style>
     <style name="FooterButtonEaseText" parent="FooterButtonNextTime">
         <item name="android:textSize">14sp</item>
         <item name="android:textAllCaps">true</item>
-        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:fontFamily">@font/font_custom_regular</item>
     </style>
 
     <!-- Styles for each of the 4 answer buttons -->
     <!-- Ease text -->
     <style name="AgainButtonEaseStyle" parent="FooterButtonEaseText">
         <item name="android:textColor">?attr/againButtonTextColor</item>
-        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:fontFamily">@font/font_custom_regular</item>
     </style>
     <style name="HardButtonEaseStyle" parent="FooterButtonEaseText">
         <item name="android:textColor">?attr/hardButtonTextColor</item>
-        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:fontFamily">@font/font_custom_regular</item>
     </style>
     <style name="GoodButtonEaseStyle" parent="FooterButtonEaseText">
         <item name="android:textColor">?attr/goodButtonTextColor</item>
-        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:fontFamily">@font/font_custom_regular</item>
     </style>
     <style name="EasyButtonEaseStyle" parent="FooterButtonEaseText">
         <item name="android:textColor">?attr/easyButtonTextColor</item>
-        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:fontFamily">@font/font_custom_regular</item>
     </style>
     <!-- Next time text. Use the same color as the ease text. -->
     <style name="AgainButtonTimeStyle" parent="FooterButtonNextTime">
         <item name="android:textColor">?attr/againButtonTextColor</item>
-        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:fontFamily">@font/font_custom_regular</item>
     </style>
     <style name="HardButtonTimeStyle" parent="FooterButtonNextTime">
         <item name="android:textColor">?attr/hardButtonTextColor</item>
-        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:fontFamily">@font/font_custom_regular</item>
     </style>
     <style name="GoodButtonTimeStyle" parent="FooterButtonNextTime">
         <item name="android:textColor">?attr/goodButtonTextColor</item>
-        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:fontFamily">@font/font_custom_regular</item>
     </style>
     <style name="EasyButtonTimeStyle" parent="FooterButtonNextTime">
         <item name="android:textColor">?attr/easyButtonTextColor</item>
-        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:fontFamily">@font/font_custom_regular</item>
     </style>
 
     <!-- FAB menu items -->
@@ -103,7 +103,7 @@
 
     <!-- Action bar. Text color changes to either black or white depending on theme. -->
     <style name="ActionBarStyle" parent="Base.ThemeOverlay.AppCompat.ActionBar">
-        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:fontFamily">@font/font_custom_regular</item>
         <!-- Colors: hamburger, title text, overflow icon -->
         <item name="android:textColorPrimary">?attr/actionBarTextColor</item>
         <!-- Colors: subtitle text -->

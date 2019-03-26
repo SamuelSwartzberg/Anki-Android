@@ -21,10 +21,12 @@ package com.ichi2.themes;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.view.WindowManager.BadTokenException;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.ichi2.anki.AnkiActivity;
+import com.ichi2.anki.R;
 
 import timber.log.Timber;
 
@@ -66,6 +68,10 @@ public class StyledProgressDialog extends Dialog {
         return new MaterialDialog.Builder(context)
                 .title(title)
                 .content(message)
+                .negativeColorAttr(R.attr.dialog_negative_color)
+                .positiveColorAttr(R.attr.dialog_positive_color)
+                .titleColorAttr(R.attr.dialog_text_primary_color)
+                .contentColorAttr(R.attr.dialog_text_secondary_color)
                 .progress(true, 0)
                 .cancelable(cancelable)
                 .cancelListener(cancelListener)

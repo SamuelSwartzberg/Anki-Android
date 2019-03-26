@@ -12,12 +12,13 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="28dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="48dp"
         android:text="Anki"
         android:textColor="?attr/actionBarTextColor"
-        android:textSize="36sp"
-        android:fontFamily="@font/nunito_regular"
+        android:textSize="40sp"
+        android:fontFamily="@font/font_custom_regular"
+        android:textStyle="bold"
         />
 
     <RelativeLayout

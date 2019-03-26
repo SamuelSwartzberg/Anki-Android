@@ -94,6 +94,11 @@
     <attr name="fab_pressed" format="color"/>
     <attr name="fab_icon_color" format="color"/>
     <attr name="fab_labelsTextColor" format="color"/>
-    <attr name="fab_background" format="color"/>
     <attr name="fab_item_background" format="reference"/>
+    <!-- Dialogs -->
+    <attr name="dialog_text_primary_color" format="color"/>
+    <attr name="dialog_text_secondary_color" format="color"/>
+    <attr name="dialog_negative_color" format="color"/>
+    <attr name="dialog_positive_color" format="color"/>
+
 </resources>

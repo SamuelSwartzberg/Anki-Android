@@ -33,7 +33,6 @@
         <item name="fab_normal">@color/theme_plain_accent</item>
         <item name="fab_pressed">#c8607d8b</item> <!-- 55 less opacity than fab_normal -->
         <item name="fab_icon_color">@color/theme_plain_secondary_text</item>
-        <item name="fab_background">@color/theme_plain_primary_dark</item>
     </style>
 
     <!-- Preferences screens -->

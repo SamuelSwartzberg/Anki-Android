@@ -53,7 +53,7 @@
                 android:text="@string/show_answer"
                 android:textSize="14sp"
                 android:textColor="?actionBarTextColor"
-                android:fontFamily="@font/nunito_regular"
+                android:fontFamily="@font/font_custom_regular"
                 android:background="@drawable/fab_oval"
                 android:elevation="@dimen/fab_elevation"
                 />
