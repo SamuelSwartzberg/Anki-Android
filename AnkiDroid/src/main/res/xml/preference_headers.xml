@@ -24,6 +24,19 @@
     <header
         android:fragment="com.ichi2.anki.Preferences$SettingsFragment"
         android:summary="@string/pref_cat_general_summ"
+        android:title="placeholder">
+    </header>
+    <!--  General Preferences -->
+    <header
+        android:fragment="com.ichi2.anki.Preferences$SettingsFragment"
+        android:summary="@string/pref_cat_general_summ"
+        android:title="placeholder">
+    </header>
+
+    <!--  General Preferences -->
+    <header
+        android:fragment="com.ichi2.anki.Preferences$SettingsFragment"
+        android:summary="@string/pref_cat_general_summ"
         android:title="@string/pref_cat_general">
         <extra
             android:name="subscreen"

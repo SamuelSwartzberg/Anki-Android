@@ -51,6 +51,7 @@
     <attr name="reviewCountColor" format="color"/>
     <attr name="zeroCountColor" format="color"/>
     <!-- Reviewer button colors -->
+    <attr name="flipButtonRef" format= "reference"/>
     <attr name="againButtonRef" format= "reference"/>
     <attr name="hardButtonRef" format= "reference"/>
     <attr name="goodButtonRef" format= "reference"/>

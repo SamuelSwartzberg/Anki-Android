@@ -32,19 +32,19 @@
             android:orientation="vertical" >
 
             <Button
-                style="@style/FooterButtonLayout"
-                android:background="?attr/hardButtonRef"
                 android:id="@+id/flip_card"
+                style="@style/FooterButtonLayout"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
+                android:background="#ffffff"
                 android:clickable="false"
                 android:text="@string/show_answer"
-                android:textColor="?attr/answerButtonTextColor"/>
+                android:textColor="?attr/answerButtonTextColor" />
         </LinearLayout>
 
         <LinearLayout
             style="@style/FooterButtonLayout"
-            android:background="?attr/againButtonRef"
+            android:background="#ffffff"
             android:id="@+id/flashcard_layout_ease1"
             android:layout_width="0dip"
             android:layout_height="@dimen/touch_target"
@@ -64,7 +64,7 @@
 
         <LinearLayout
             style="@style/FooterButtonLayout"
-            android:background="?attr/hardButtonRef"
+            android:background="#ffffff"
             android:id="@+id/flashcard_layout_ease2"
             android:layout_width="0dip"
             android:layout_height="@dimen/touch_target"
@@ -84,7 +84,7 @@
 
         <LinearLayout
             style="@style/FooterButtonLayout"
-            android:background="?attr/goodButtonRef"
+            android:background="#ffffff"
             android:id="@+id/flashcard_layout_ease3"
             android:layout_width="0dip"
             android:layout_height="@dimen/touch_target"
@@ -104,7 +104,7 @@
 
         <LinearLayout
             style="@style/FooterButtonLayout"
-            android:background="?attr/easyButtonRef"
+            android:background="#ffffff"
             android:id="@+id/flashcard_layout_ease4"
             android:layout_width="0dip"
             android:layout_height="@dimen/touch_target"

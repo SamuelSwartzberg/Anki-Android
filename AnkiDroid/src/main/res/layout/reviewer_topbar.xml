@@ -3,10 +3,10 @@
         android:id="@+id/top_bar"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="9dp"
+        android:paddingLeft="20dp"
         android:paddingRight="10dp"
-        android:paddingTop="2dp"
-        android:paddingBottom="3dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
         android:gravity="center_vertical"
         android:background="?attr/topBarColor">
         <TextView
@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:text=""
             android:textColor="?attr/newCountColor"
-            android:textSize="14sp" />
+            android:textSize="16sp" />
         <TextView
             android:id="@+id/learn_number"
             android:layout_width="wrap_content"
@@ -24,7 +24,7 @@
             android:paddingLeft="8dp"
             android:text=""
             android:textColor="?attr/learnCountColor"
-            android:textSize="14sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/review_number"
@@ -34,7 +34,7 @@
             android:paddingLeft="8dp"
             android:text=""
             android:textColor="?attr/reviewCountColor"
-            android:textSize="14sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/choosen_answer"
@@ -43,7 +43,7 @@
             android:layout_centerHorizontal="true"
             android:gravity="center"
             android:text=""
-            android:textSize="14sp" />
+            android:textSize="16sp" />
 
         <Chronometer
             android:id="@+id/card_time"
@@ -51,6 +51,6 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:gravity="center"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:visibility="invisible" />
 </RelativeLayout>

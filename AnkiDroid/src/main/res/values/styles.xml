@@ -36,9 +36,10 @@
     <!--  Material Design-style persistent footer button -->
     <style name="FooterButtonLayoutBase">
         <item name="android:layout_height">48dp</item>
-        <item name="android:textAllCaps">true</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">16.5sp</item>
         <item name="android:typeface">sans</item>
+        <item name="android:fontWeight">700</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_gravity">center_vertical</item>
         <item name="android:singleLine">true</item>
@@ -51,12 +52,14 @@
         <item name="android:ellipsize">marquee</item>
         <item name="android:gravity">bottom|center_horizontal</item>
         <item name="android:singleLine">true</item>
-        <item name="android:textSize">12.5sp</item>
+        <item name="android:textSize">13.5sp</item>
+        <item name="android:fontWeight">700</item>
     </style>
     <style name="FooterButtonEaseText" parent="FooterButtonNextTime">
-        <item name="android:textSize">14sp</item>
-        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">13.5sp</item>
+        <item name="android:textAllCaps">false</item>
         <item name="android:typeface">sans</item>
+        <item name="android:fontWeight">700</item>
     </style>
 
     <!-- Styles for each of the 4 answer buttons -->

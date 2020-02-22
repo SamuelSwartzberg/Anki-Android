@@ -2,7 +2,7 @@
 <resources>
     <color name="theme_plain_primary">#9E9E9E</color>
     <color name="theme_plain_primary_dark">#616161</color>
-    <color name="theme_plain_primary_light">#F5F5F5</color>
+    <color name="theme_plain_primary_light">#ffffff</color>
     <color name="theme_plain_accent">#607D8B</color>
     <color name="theme_plain_primary_text">#212121</color>
     <color name="theme_plain_secondary_text">#727272</color>
@@ -22,8 +22,13 @@
         <item name="actionBarPopupTextColor">@color/theme_plain_primary_text</item>
         <item name="actionModeBackground">@color/theme_plain_primary</item>
         <!-- Reviewer colors -->
-        <item name="topBarColor">@color/theme_plain_primary_light</item>
+        <item name="topBarColor">#ffffff</item>
         <!-- Reviewer button drawables -->
+        <item name="answerButtonTextColor">#000000</item>
+        <item name="againButtonTextColor">#B40A1B</item>
+        <item name="hardButtonTextColor">#939598</item>
+        <item name="goodButtonTextColor">#41B619</item>
+        <item name="easyButtonTextColor">#7AB1FF</item>
         <item name="againButtonRef">@drawable/footer_button_all_plain</item>
         <item name="hardButtonRef">@drawable/footer_button_all_plain</item>
         <item name="goodButtonRef">@drawable/footer_button_all_plain</item>
@@ -32,6 +37,10 @@
         <item name="fab_normal">@color/theme_plain_accent</item>
         <item name="fab_pressed">#c8607d8b</item> <!-- 55 less opacity than fab_normal -->
         <item name="fab_background">@color/theme_plain_primary_dark</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+
     </style>
 
     <!-- Preferences screens -->
